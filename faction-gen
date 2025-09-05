@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faction Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .faction {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .faction h2 {
+            margin-top: 0;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Faction Generator</h1>
+    <div class="faction">
+        <h2>Name: <span id="faction-name"></span></h2>
+        <p><strong>Type:</strong> <span id="faction-type"></span></p>
+        <p><strong>Mission:</strong> <span id="faction-mission"></span></p>
+        <p><strong>Operations:</strong> <span id="faction-operations"></span></p>
+        <p><strong>Membership Requirements:</strong> <span id="faction-membership"></span></p>
+        <h3>Faction Relationships</h3>
+        <p><strong>Allies:</strong> <span id="faction-allies"></span></p>
+        <p><strong>Neutral:</strong> <span id="faction-neutral"></span></p>
+        <p><strong>Hostile:</strong> <span id="faction-hostile"></span></p>
+        <h3>Faction Details</h3>
+        <p><strong>Leadership:</strong> <span id="faction-leadership"></span></p>
+        <p><strong>Notable Members:</strong> <span id="faction-members"></span></p>
+        <p><strong>History:</strong> <span id="faction-history"></span></p>
+        <p><strong>Strengths and Weaknesses:</strong> <span id="faction-strengths"></span></p>
+        <p><strong>Resources:</strong> <span id="faction-resources"></span></p>
+    </div>
+    <button onclick="randomizeFaction()">Randomize Faction</button>
+
+    <script>
+        const factions = [
+            {
+                name: "The Shadow Guild",
+                type: "Criminal",
+                mission: "Control the underworld",
+                operations: "Espionage, bribery, and assassination",
+                membership: "Proven loyalty and skills in stealth",
+                allies: "The Thieves' Guild",
+                neutral: "The Merchants' Guild",
+                hostile: "The City Guard",
+                leadership: "The Shadow Master",
+                members: "Raven, Viper, Ghost",
+                history: "Formed in the shadows of the old empire, the guild has grown in power.",
+                strengths: "Stealth and intelligence",
+                weaknesses: "Limited manpower",
+                resources: "Hidden caches of gold and weapons"
+            },
+            {
+                name: "The Iron Legion",
+                type: "Military",
+                mission: "Protect the realm",
+                operations: "Military campaigns and fortifications",
+                membership: "Military training and loyalty",
+                allies: "The Royal Guard",
+                neutral: "The Merchants' Guild",
+                hostile: "The Rebel Forces",
+                leadership: "General Ironfist",
+                members: "Captain Steel, Sergeant Stone",
+                history: "Founded by the king to defend the kingdom from invaders.",
+                strengths: "Strong military force",
+                weaknesses: "Rigid hierarchy",
+                resources: "Armories and fortresses"
+            },
+            // Add more factions as needed
+        ];
+
+        function randomizeFaction() {
+            const randomFaction = factions[Math.floor(Math.random() * factions.length)];
+            document.getElementById('faction-name').textContent = randomFaction.name;
+            document.getElementById('faction-type').textContent = randomFaction.type;
+            document.getElementById('faction-mission').textContent = randomFaction.mission;
+            document.getElementById('faction-operations').textContent = randomFaction.operations;
+            document.getElementById('faction-membership').textContent = randomFaction.membership;
+            document.getElementById('faction-allies').textContent = randomFaction.allies;
+            document.getElementById('faction-neutral').textContent = randomFaction.neutral;
+            document.getElementById('faction-hostile').textContent = randomFaction.hostile;
+            document.getElementById('faction-leadership').textContent = randomFaction.leadership;
+            document.getElementById('faction-members').textContent = randomFaction.members;
+            document.getElementById('faction-history').textContent = randomFaction.history;
+            document.getElementById('faction-strengths').textContent = randomFaction.strengths;
+            document.getElementById('faction-resources').textContent = randomFaction.resources;
+        }
+
+        // Initialize with a random faction
+        randomizeFaction();
+    </script>
+</body>
+</html>
