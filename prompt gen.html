@@ -1,0 +1,57 @@
+<html>
+<head>
+  <title>RPG Prompt Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+    h1 {
+      text-align: center;
+      color: #333333;
+    }
+    #prompt {
+      margin: 20px auto;
+      width: 80%;
+      padding: 10px;
+      border: 1px solid #cccccc;
+      background-color: #ffffff;
+    }
+    #button {
+      display: block;
+      margin: 0 auto;
+      width: 100px;
+      height: 40px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #ffffff;
+      background-color: #333333;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    // An array of possible prompts
+    var prompts = [
+      "You are a knight who has been sent on a quest to slay a dragon that has been terrorizing a nearby village. However, when you arrive at the dragon's lair, you discover that the dragon is actually a friendly and misunderstood creature who just wants to be left alone. What do you do?",
+      "You are a rogue who has been hired by a mysterious benefactor to steal a valuable artifact from a heavily guarded museum. However, as you sneak into the museum, you realize that you are not the only thief who is after the artifact. What do you do?",
+      "You are a wizard who has been studying magic at a prestigious academy for years. However, you have a secret: you are actually a spy for a rival faction who wants to overthrow the academy's leadership. What do you do?",
+      "You are a bard who has been traveling the land, entertaining people with your songs and stories. However, you have a secret: you are actually a member of a rebel group who uses your performances as a cover to spread propaganda and recruit allies. What do you do?",
+      "You are a cleric who has been serving a god of healing and mercy for years. However, you have a secret: you are actually a follower of a god of death and destruction who has been using your position to spread disease and misery. What do you do?"
+    ];
+
+    // A function that randomly selects a prompt from the array and displays it in the div element
+    function generatePrompt() {
+      var index = Math.floor(Math.random() * prompts.length); // A random index between 0 and the length of the array
+      var prompt = prompts[index]; // The prompt at that index
+      document.getElementById("prompt").innerHTML = prompt; // Display the prompt in the div element
+    }
+  </script>
+</head>
+<body>
+  <h1>RPG Prompt Generator</h1>
+  <div id="prompt">Click the button to generate a prompt.</div>
+  <button id="button" onclick="generatePrompt()">Generate</button>
+</body>
+</html>
+```
